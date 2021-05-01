@@ -268,6 +268,9 @@ a:not(.social__link):hover:before {
 	grid-gap: 1rem;
 	line-height: 1.25;
 }
+.portfolio__item-sub {
+	font-size: calc(2rem + 4 * ((100vw - 32rem) / 780)); 
+}
 
 .footer {
 	padding: var(--whitespace);
@@ -372,7 +375,10 @@ a:not(.social__link):hover:before {
 		font-size: 2.6rem; 
 	}
 	.portfolio__link {
-		font-size:2rem 
+		font-size: 2rem 
+	}
+	.portfolio__item-sub {
+		font-size: 2rem;
 	}
 	.social__icon {
 		width: 3.4rem;
