@@ -48,6 +48,29 @@ body {
 	text-transform: uppercase;
 	min-height: 100vh;
 }
+a:not(.social__link) {
+	color: var(--font-color);
+	font-weight: 700;
+	text-decoration: none;
+	position: relative;
+	transition: var(--transition);
+}
+.a:not(.social__link):before {
+	content: '';
+	width: 0;
+	height: 100%;
+	background: var(--font-color);
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+	transition: var(--transition);
+}
+.a:not(.social__link):hover {
+	color: var(--background-color);
+}
+.a:not(.social__link):hover:before {
+	width: 100%;
+}
 .master {
 	/* padding: 10vh 0 0; */
 	padding: 3rem 0;
@@ -60,32 +83,11 @@ body {
 	text-align: center;
 }
 .logo__link {
-	color: var(--font-color);
-	font-weight: 700;
 	letter-spacing: -2px;
-	text-decoration: none;
 	display: inline-flex;
 	align-items: flex-end;
 	justify-content: center;
 	line-height: 1;
-	position: relative;
-	transition: all .2s ease;
-}
-.logo__link:before {
-	content: '';
-	width: 0;
-	height: 100%;
-	background: var(--font-color);
-	position: absolute;
-	bottom: 0;
-	z-index: -1;
-	transition: var(--transition);
-}
-.logo__link:hover {
-	color: var(--background-color);
-}
-.logo__link:hover:before {
-	width: 100%;
 }
 .logo__caleb {
 	font-size: calc(2.8rem + 4 * ((100vw - 32rem) / 780)); 
@@ -167,29 +169,6 @@ body {
 
 .resume__contact-value {
 	font-size: calc(2rem + 4 * ((100vw - 32rem) / 780));
-	text-decoration: none;
-	color: var(--font-color);
-	position: relative;
-	transition: all .2s ease;
-}
-
-.resume__contact-value:before {
-	content: '';
-	width: 0;
-	height: 100%;
-	background: var(--font-color);
-	position: absolute;
-	bottom: 0;
-	z-index: -1;
-	transition: var(--transition);
-}
-
-.resume__contact-value:hover {
-	color: var(--background-color);
-}
-
-.resume__contact-value:hover:before {
-	width: 100%;
 }
 
 .resume__section-title {
@@ -244,6 +223,11 @@ body {
 	grid-gap: 2rem;
 }
 
+.resume__download {
+	margin: 0 auto 4rem;
+	display: inline-flex;
+	font-size: 2rem;
+}
 
 .portfolio {
 	text-transform: none;
@@ -272,29 +256,8 @@ body {
 	line-height: 1.5;
 }
 .portfolio__link {
-	color: var(--font-color);
-	font-weight: 700;
-	text-decoration: none;
-	position: relative;
-	transition: all .2s ease;
 	display: inline-flex;
 	font-size: calc(2rem + 4 * ((100vw - 32rem) / 780)); 
-}
-.portfolio__link:before {
-	content: '';
-	width: 0;
-	height: 100%;
-	background: var(--font-color);
-	position: absolute;
-	bottom: 0;
-	z-index: -1;
-	transition: var(--transition);
-}
-.portfolio__link:hover {
-	color: var(--background-color);
-}
-.portfolio__link:hover:before {
-	width: 100%;
 }
 .portfolio__description {
 	border: .5rem solid var(--font-color);
