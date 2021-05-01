@@ -1,6 +1,6 @@
 :root {
-	--black: #000;
-	--white: #fff;
+	--black: rgb(0,0,0);
+	--white: rgb(255,255,255);
 	--linkedin: #0a66c2;
 	--twitter: #1da1f2;
 	--github: #181717;
@@ -8,6 +8,10 @@
 	--font-color: var(--white);
 	--whitespace: 3rem;
 	--transition: all 250ms ease;
+}
+::selection {
+	background: rgba(var(--font-color), .25);
+	color: rgba(var(--font-color), .75);
 }
 *,
 *:before,
@@ -193,7 +197,7 @@ body {
 	background: var(--font-color);
 	color: var(--background-color);
 	display: inline-block;
-	padding: .25rem .5rem;
+	padding: .25rem .5rem 0;
 	margin:0;
 }
 
@@ -221,7 +225,7 @@ body {
 	padding: 0;
 	list-style-type: none;
 	display: grid;
-	grid-gap: .5rem;
+	grid-gap: 1rem;
 }
 
 .resume__article-item {
@@ -238,6 +242,68 @@ body {
 .resume__minor {
 	display: grid;
 	grid-gap: 2rem;
+}
+
+
+.portfolio {
+	text-transform: none;
+	letter-spacing: -.5px;
+	text-align: left;
+	line-height: 1;
+	max-width: 120rem;
+	margin: 0 auto;
+	display: grid;
+	grid-gap: 2rem;
+}
+.portfolio__heading {
+	margin: 0;
+	padding: 0 0 2rem;
+	font-size: 4rem;
+}
+.portfolio__item-title {
+	margin: 0;
+	padding: .5rem .5rem 0;
+	font-size: calc(2.6rem + 4 * ((100vw - 32rem) / 780)); 
+	background: var(--font-color);
+	color: var(--background-color);
+	display: inline-flex;
+}
+.portfolio__item-visit {
+	line-height: 1.5;
+}
+.portfolio__link {
+	color: var(--font-color);
+	font-weight: 700;
+	text-decoration: none;
+	position: relative;
+	transition: all .2s ease;
+	display: inline-flex;
+	font-size: calc(2rem + 4 * ((100vw - 32rem) / 780)); 
+}
+.portfolio__link:before {
+	content: '';
+	width: 0;
+	height: 100%;
+	background: var(--font-color);
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+	transition: var(--transition);
+}
+.portfolio__link:hover {
+	color: var(--background-color);
+}
+.portfolio__link:hover:before {
+	width: 100%;
+}
+.portfolio__description {
+	border: .5rem solid var(--font-color);
+	padding: 2rem;
+}
+.portfolio__item-list {
+	display: grid;
+	grid-gap: 1rem;
+	line-height: 1.25;
 }
 
 .footer {
@@ -338,6 +404,12 @@ body {
 	.resume__intro,
 	.resume__experience {
 		grid-column-end: span 2;
+	}
+	.portfolio__item-title {
+		font-size: 2.6rem; 
+	}
+	.portfolio__link {
+		font-size:2rem 
 	}
 	.social__icon {
 		width: 3.4rem;
